@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace HackerRankChallengeCode
+namespace OtherChallenges
 {
     public class SherlockSquares
     {

@@ -49,6 +49,8 @@
     <Compile Include="Day06Review.cs" />
     <Compile Include="Day07Arrays.cs" />
     <Compile Include="Day08DictionariesAndMaps.cs" />
+    <Compile Include="Day09Recursion.cs" />
+    <Compile Include="Day10BinaryNumbers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

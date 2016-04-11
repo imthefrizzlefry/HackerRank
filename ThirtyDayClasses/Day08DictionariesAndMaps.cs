@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HackerRankChallengeCode
+namespace ThirtyDayClasses
 {
     public class Day08DictionariesAndMaps
     {

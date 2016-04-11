@@ -4,30 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackerRankChallengeCode
+namespace ThirtyDayClasses
 {
-    //// Declare second integer, double, and String variables.
-    //int i2;
-    //double d2;
-    //string myString;
-
-    //// Read and save an integer, double, and String to your variables.
-    //cin >> i2;
-    //cin.ignore();
-    //cin >> d2;
-    //cin.ignore();
-    //cin.ignore();
-    //getline(std::cin, myString);
-
-    //// Print the sum of both integer variables on a new line.
-    //cout << i+i2 << endl;
-    //// Print the sum of the double variables on a new line.
-    //cout.precision(1);
-    //cout << fixed << d + d2 << endl;
-    //// Concatenate and print the String variables on a new line
-    //// The 's' variable above should be printed first.
-    //cout << s << myString;
-
     public class Day01DataTypes
     {
 

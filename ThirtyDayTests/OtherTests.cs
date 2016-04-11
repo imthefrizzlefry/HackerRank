@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using HackerRankChallengeCode;
+using OtherChallenges;
 
 namespace ThirtyDayTests
 {
@@ -71,7 +71,7 @@ namespace ThirtyDayTests
             List<String> expectedOutput = new List<String> {
                 "2" };
 
-            List<String> actualOutput = HackerRankChallengeCode.SherlockSquares.CountSquares(testInput);
+            List<String> actualOutput = OtherChallenges.SherlockSquares.CountSquares(testInput);
 
             Assert.AreEqual(expectedOutput[0], actualOutput[0], "The IncorrectCount is wrong for {0}", 0);
         }
@@ -289,10 +289,126 @@ namespace ThirtyDayTests
                 "31" };
             #endregion
 
-            List<String> actualOutput = HackerRankChallengeCode.SherlockSquares.CountSquares(testInput);
+            List<String> actualOutput = OtherChallenges.SherlockSquares.CountSquares(testInput);
 
             Assert.AreEqual(expectedOutput[0], actualOutput[0], "The IncorrectCount is wrong for {0}", 0);
         }
         #endregion
+
+        #region Service Lane tests
+
+        [TestMethod]
+        [TestCategory("ServiceLane")]
+        public void ServiceLaneTest1()
+        {
+            List<String> testInput = new List<String> {
+                "8 5",
+                "2 3 1 2 3 2 3 3",
+                "0 3",
+                "4 6",
+                "6 7",
+                "3 5",
+                "0 7" };
+
+            List<String> expectedOutput = new List<String> {
+                "1",
+                "2",
+                "3",
+                "2",
+                "1" };
+
+            List<String> actualOutput = OtherChallenges.ServiceLane.UsableVehicle(testInput);
+            int outputCounter = 0;
+
+            foreach (var expectedValue in expectedOutput)
+            {                
+                Assert.AreEqual(expectedValue, actualOutput[outputCounter], string.Format("Value {0} was incorrect.", outputCounter+1));
+                outputCounter++;
+            }
+
+        }
+
+        [TestMethod]
+        [TestCategory("ServiceLane")]
+        public void ServiceLaneTest2()
+        {
+            List<String> testInput = new List<String> {
+                "5 5",
+                "1 2 2 2 1",
+                "2 3",
+                "1 4",
+                "2 4",
+                "2 4",
+                "2 3" };
+
+            List<String> expectedOutput = new List<String> {
+                "2",
+                "1",
+                "1",
+                "1",
+                "2" };
+
+            List<String> actualOutput = OtherChallenges.ServiceLane.UsableVehicle(testInput);
+            int outputCounter = 0;
+
+            foreach (var expectedValue in expectedOutput)
+            {
+                Assert.AreEqual(expectedValue, actualOutput[outputCounter], string.Format("Value {0} was incorrect.", outputCounter + 1));
+                outputCounter++;
+            }
+
+        }
+
+        #endregion
+
+        [TestMethod]
+        [TestCategory("CutTheSticks")]
+        public void CutSticksTest1()
+        {
+            List<String> testInput = new List<String> {
+                "6",
+                "5 4 4 2 2 8" };
+
+            List<String> expectedOutput = new List<String> {
+                "6",
+                "4",
+                "2",
+                "1" };
+
+            List<String> actualOutput = OtherChallenges.CutTheSticks.NumberOfCuts(testInput);
+
+            int outputCounter = 0;
+
+            foreach (var expectedValue in expectedOutput)
+            {
+                Assert.AreEqual(expectedValue, actualOutput[outputCounter], string.Format("Cut {0} was incorrect. it should be {1}", outputCounter, expectedValue ));
+                outputCounter++;
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("CutTheSticks")]
+        public void CutSticksTest2()
+        {
+            List<String> testInput = new List<String> {
+                "8",
+                "1 2 3 4 3 3 2 1" };
+
+            List<String> expectedOutput = new List<String> {
+                "8",
+                "6",
+                "4",
+                "1" };
+
+            List<String> actualOutput = OtherChallenges.CutTheSticks.NumberOfCuts(testInput);
+
+            int outputCounter = 0;
+
+            foreach (var expectedValue in expectedOutput)
+            {
+                Assert.AreEqual(expectedValue, actualOutput[outputCounter], string.Format("Cut {0} was incorrect. it should be {1}", outputCounter, expectedValue));
+                outputCounter++;
+            }
+        }
     }
 }

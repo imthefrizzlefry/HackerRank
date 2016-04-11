@@ -30,7 +30,31 @@ namespace OtherChallenges
         //        Console.WriteLine(maxSize);
         //    }
         //}
+        public static List<string> UsableVehicle(List<string> testInput)
+        {
+            List<string> outputValue = new List<string>();
+            string[] tokens_n = testInput[0].Split(' ');
+            int n = Convert.ToInt32(tokens_n[0]);
+            int t = Convert.ToInt32(tokens_n[1]);
 
+            string[] width_temp = testInput[1].Split(' ');
+            int[] width = Array.ConvertAll(width_temp, Int32.Parse);
+            for (int a0 = 0; a0 < t; a0++)
+            {
+                string[] tokens_i = testInput[a0+2].Split(' ');
+                int i = Convert.ToInt32(tokens_i[0]);
+                int j = Convert.ToInt32(tokens_i[1]);
+                int maxSize = 3;
 
+                for (int index = i; index <= j; index++)
+                {
+                    maxSize = (width[index] < maxSize ? width[index] : maxSize);
+                }
+
+                outputValue.Add(maxSize.ToString());
+            }
+
+            return outputValue;
+        }
     }
 }
