@@ -313,5 +313,53 @@ namespace ThirtyDayTests
         }
         #endregion
 
+        #region 11 2D-Arrays
+
+        [TestMethod]
+        [TestCategory("Day112DArrays")]
+        public void TwoDimArrayTest1()
+        {
+            List<string> testInput = new List<string>
+            {
+                "1 1 1 0 0 0",
+                "0 1 0 0 0 0",
+                "1 1 1 0 0 0",
+                "0 0 2 4 4 0",
+                "0 0 0 2 0 0",
+                "0 0 1 2 4 0"
+            };
+
+            string expectedOutput = "19";
+
+            string actualOutput = ThirtyDayClasses.Day112DArrays.LargestHourGlass(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+
+        }
+
+        [TestMethod]
+        [TestCategory("Day112DArrays")]
+        public void TwoDimArrayTest2()
+        {
+            List<string> testInput = new List<string>
+            {
+                "1 1 1 0 0 0",
+                "0 1 0 0 0 0",
+                "1 1 1 0 0 0",
+                "0 0 2 4 4 0",
+                "0 0 9 2 0 0",
+                "0 0 1 2 4 0"
+            };
+
+            string expectedOutput = "19";
+
+            string actualOutput = ThirtyDayClasses.Day112DArrays.LargestHourGlass(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+
+        }
+
+        #endregion
+
     }
 }
