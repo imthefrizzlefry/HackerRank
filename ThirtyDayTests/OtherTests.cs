@@ -507,5 +507,31 @@ namespace ThirtyDayTests
         }
 
         #endregion
+
+        #region Fibonacci Modified Tests
+
+        [TestMethod]
+        [TestCategory("FibonacciModified")]
+        public void FibonacciModifiedTest1()
+        {
+            string testInput = "0 1 5";
+            string expectedOutput = "5";
+            string actualOutput = OtherChallenges.FibModified.Calculate(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [TestMethod]
+        [TestCategory("FibonacciModified")]
+        public void FibonacciModifiedTest2()
+        {
+            string testInput = "0 1 10";
+            string expectedOutput = "84266613096281243382112";
+            string actualOutput = OtherChallenges.FibModified.Calculate(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }       
+
+        #endregion
     }
 }
