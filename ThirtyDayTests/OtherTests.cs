@@ -12,31 +12,7 @@ namespace ThirtyDayTests
     [TestClass]
     public class OtherTests
     {
-        public OtherTests()
-        {
-            //
-            // TODO: Add constructor logic here
-            //
-        }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
+        
         #region Additional test attributes
         //
         // You can use the following additional attributes as you write your tests:
@@ -453,7 +429,83 @@ namespace ThirtyDayTests
         }
 
 
-        
+
+        #endregion
+
+        #region Library Fine Tests
+
+        [TestMethod]
+        [TestCategory("LibraryFine")]
+        public void LibraryFineTest1()
+        {
+            List<string> testInput = new List<string>
+            {
+                "9 6 2015",
+                "6 6 2015"
+            };
+
+            string expectedOutput = "45";
+
+            string actualOutput = OtherChallenges.LibraryFine.CalculateLateFee(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+
+        }
+
+        [TestMethod]
+        [TestCategory("LibraryFine")]
+        public void LibraryFineTest2()
+        {
+            List<string> testInput = new List<string>
+            {
+                "1 7 2015",
+                "31 6 2015"
+            };
+
+            string expectedOutput = "500";
+
+            string actualOutput = OtherChallenges.LibraryFine.CalculateLateFee(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+
+        }
+
+        [TestMethod]
+        [TestCategory("LibraryFine")]
+        public void LibraryFineTest3()
+        {
+            List<string> testInput = new List<string>
+            {
+                "30 12 2015",
+                "1 1 2015"
+            };
+
+            string expectedOutput = "5500";
+
+            string actualOutput = OtherChallenges.LibraryFine.CalculateLateFee(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+
+        }
+
+        [TestMethod]
+        [TestCategory("LibraryFine")]
+        public void LibraryFineTest4()
+        {
+            List<string> testInput = new List<string>
+            {
+                "1 1 2016",
+                "31 12 2015"
+            };
+
+            string expectedOutput = "10000";
+
+            string actualOutput = OtherChallenges.LibraryFine.CalculateLateFee(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+
+        }
+
         #endregion
     }
 }

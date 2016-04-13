@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CaesarCipher.cs" />
     <Compile Include="CutTheSticks.cs" />
+    <Compile Include="LibraryFine.cs" />
     <Compile Include="ServiceLane.cs" />
     <Compile Include="SherlockSquares.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
