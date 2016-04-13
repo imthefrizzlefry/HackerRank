@@ -361,6 +361,7 @@ namespace ThirtyDayTests
 
         #endregion
 
+        #region Cut Sticks Tests
         [TestMethod]
         [TestCategory("CutTheSticks")]
         public void CutSticksTest1()
@@ -410,5 +411,49 @@ namespace ThirtyDayTests
                 outputCounter++;
             }
         }
+
+        #endregion
+
+        #region Caesar Cipher Tests
+
+        [TestMethod]
+        [TestCategory("CaesarCipher")]
+        public void CaesarCipherTest1()
+        {
+            List<string> testInput = new List<string>
+            {
+                "11",
+                "middle-Outz",
+                "2"
+            };
+
+            string expectedOutput = "okffng-Qwvb";
+
+            string actualOutput = OtherChallenges.CaesarCipher.Encode(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [TestMethod]
+        [TestCategory("CaesarCipher")]
+        public void CaesarCipherTest2()
+        {
+            List<string> testInput = new List<string>
+            {
+                "10",
+                "www.abc.xy",
+                "87"
+            };
+
+            string expectedOutput = "fff.jkl.gh";
+
+            string actualOutput = OtherChallenges.CaesarCipher.Encode(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+
+        
+        #endregion
     }
 }
