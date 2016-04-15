@@ -96,7 +96,62 @@ namespace ThirtyDayTests
 
         #endregion
 
-        
+
+
+        #region 07 Arrays
+
+        [TestMethod]
+        [TestCategory("Day07Arrays")]
+        public void ArraysTest1()
+        {
+            List<string> testInput = new List<string>
+            {
+                "4",
+                "1 4 3 2"
+            };
+
+            string expectedOutput = "2 3 4 1";
+
+            string actualOutput = ThirtyDayClasses.Day07Arrays.ReverseArray(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [TestMethod]
+        [TestCategory("Day07Arrays")]
+        public void ArraysTest2()
+        {
+            List<string> testInput = new List<string>
+            {
+                "1",
+                "4"
+            };
+
+            string expectedOutput = "4";
+
+            string actualOutput = ThirtyDayClasses.Day07Arrays.ReverseArray(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [TestMethod]
+        [TestCategory("Day07Arrays")]
+        public void ArraysTest3()
+        {
+            List<string> testInput = new List<string>
+            {
+                "5",
+                "4 8 9 3 0"
+            };
+
+            string expectedOutput = "0 3 9 8 4";
+
+            string actualOutput = ThirtyDayClasses.Day07Arrays.ReverseArray(testInput);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        #endregion
 
         #region 08 Dictionaries and Maps
         [TestMethod]
