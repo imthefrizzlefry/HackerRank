@@ -547,5 +547,9 @@ namespace ThirtyDayTests
         }
         #endregion
 
+        #region 13 AbstractClasses
+
+
+        #endregion
     }
 }
