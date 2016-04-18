@@ -52,6 +52,7 @@
     <Compile Include="Day09Recursion.cs" />
     <Compile Include="Day112DArrays.cs" />
     <Compile Include="Day10BinaryNumbers.cs" />
+    <Compile Include="Day12Inheritance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

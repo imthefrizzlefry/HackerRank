@@ -416,5 +416,136 @@ namespace ThirtyDayTests
 
         #endregion
 
+        #region 12 Inheritance
+
+        [TestMethod]
+        [TestCategory("Day12Inheritance")]
+        public void InheritanceTest1()
+        {
+            string firstName = "Heraldo";
+            string lastName = "Memelli";
+            int id = 8135627;
+            int[] scores = new int[] { 100, 80 };
+
+
+            ThirtyDayClasses.Student studentUnderTest = new Student(firstName, lastName, id, scores);
+
+            List<string> expectedOutput = new List<string>
+            {
+                "Name: Memelli, Heraldo",
+                "ID: 8135627",
+                "Grade: O"
+            };
+
+            List<string> actualOutput = studentUnderTest.getStudentData();
+
+            Assert.AreEqual(expectedOutput[0], actualOutput[0], "Name Is Wrong");
+            Assert.AreEqual(expectedOutput[1], actualOutput[1], "ID Is Wrong");
+            Assert.AreEqual(expectedOutput[2], actualOutput[2], "Grade Is Wrong");
+
+        }
+
+        [TestMethod]
+        [TestCategory("Day12Inheritance")]
+        public void InheritanceTest2()
+        {
+            string firstName = "Heraldo";
+            string lastName = "Memelli";
+            int id = 8135627;
+            int[] scores = new int[] { 90, 80 };
+
+
+            ThirtyDayClasses.Student studentUnderTest = new Student(firstName, lastName, id, scores);
+
+            char expectedOutput = 'E';
+
+            char actualOutput = studentUnderTest.calculate();
+
+            Assert.AreEqual(expectedOutput, actualOutput, "Grade Is Wrong");
+
+        }
+
+        [TestMethod]
+        [TestCategory("Day12Inheritance")]
+        public void InheritanceTest3()
+        {
+            string firstName = "Heraldo";
+            string lastName = "Memelli";
+            int id = 8135627;
+            int[] scores = new int[] { 80, 70 };
+
+
+            ThirtyDayClasses.Student studentUnderTest = new Student(firstName, lastName, id, scores);
+
+            char expectedOutput = 'A';
+
+            char actualOutput = studentUnderTest.calculate();
+
+            Assert.AreEqual(expectedOutput, actualOutput, "Grade Is Wrong");
+
+        }
+
+        [TestMethod]
+        [TestCategory("Day12Inheritance")]
+        public void InheritanceTest4()
+        {
+            string firstName = "Heraldo";
+            string lastName = "Memelli";
+            int id = 8135627;
+            int[] scores = new int[] { 55, 70 };
+
+
+            ThirtyDayClasses.Student studentUnderTest = new Student(firstName, lastName, id, scores);
+
+            char expectedOutput = 'P';
+
+            char actualOutput = studentUnderTest.calculate();
+
+            Assert.AreEqual(expectedOutput, actualOutput, "Grade Is Wrong");
+
+        }
+
+
+        [TestMethod]
+        [TestCategory("Day12Inheritance")]
+        public void InheritanceTest5()
+        {
+            string firstName = "Heraldo";
+            string lastName = "Memelli";
+            int id = 8135627;
+            int[] scores = new int[] { 40 };
+
+
+            ThirtyDayClasses.Student studentUnderTest = new Student(firstName, lastName, id, scores);
+
+            char expectedOutput = 'D';
+
+            char actualOutput = studentUnderTest.calculate();
+
+            Assert.AreEqual(expectedOutput, actualOutput, "Grade Is Wrong");
+
+        }
+
+        [TestMethod]
+        [TestCategory("Day12Inheritance")]
+        public void InheritanceTest6()
+        {
+            string firstName = "Heraldo";
+            string lastName = "Memelli";
+            int id = 8135627;
+            int[] scores = new int[] { 10, 20, 30, 40 };
+
+
+            ThirtyDayClasses.Student studentUnderTest = new Student(firstName, lastName, id, scores);
+
+            char expectedOutput = 'T';
+
+            char actualOutput = studentUnderTest.calculate();
+
+            Assert.AreEqual(expectedOutput, actualOutput, "Grade Is Wrong");
+
+        }
+        #endregion
+
     }
 }
