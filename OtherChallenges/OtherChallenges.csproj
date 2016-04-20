@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddingNumbersAsStrings.cs" />
     <Compile Include="CaesarCipher.cs" />
     <Compile Include="CutTheSticks.cs" />
     <Compile Include="FibModified.cs" />

@@ -20,7 +20,7 @@ namespace ProjectEuler
 
                 int counter = 3;
 
-                while(counter < N; counter++)
+                while(counter < N)//counter++
                 {
                     if (counter % 3 == 0 || counter % 5 == 0)
                     { sum += counter; }

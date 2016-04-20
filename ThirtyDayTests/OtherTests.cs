@@ -534,6 +534,90 @@ namespace ThirtyDayTests
 
         #endregion
 
-        
+        #region Adding Numbers As Strings Tests
+
+        [TestMethod]
+        [TestCategory("AddingNumbersAsStrings")]
+        public void StringAdderTest1()
+        {
+            string testInputA = "1";
+            string testInputB = "1";
+
+            string expectedOutput = "2";
+
+            string actualOutput = OtherChallenges.AddingNumbersAsStrings.StringAdder(testInputA, testInputB);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [TestMethod]
+        [TestCategory("AddingNumbersAsStrings")]
+        public void StringAdderTest2()
+        {
+            string testInputA = "9";
+            string testInputB = "1";
+
+            string expectedOutput = "10";
+
+            string actualOutput = OtherChallenges.AddingNumbersAsStrings.StringAdder(testInputA, testInputB);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [TestMethod]
+        [TestCategory("AddingNumbersAsStrings")]
+        public void StringAdderTest3()
+        {
+            string testInputA = "89999";
+            string testInputB = "1";
+
+            string expectedOutput = "90000";
+
+            string actualOutput = OtherChallenges.AddingNumbersAsStrings.StringAdder(testInputA, testInputB);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [TestMethod]
+        [TestCategory("AddingNumbersAsStrings")]
+        public void StringAdderTest4()
+        {
+            string testInputA = "109";
+            string testInputB = "1";
+
+            string expectedOutput = "110";
+
+            string actualOutput = OtherChallenges.AddingNumbersAsStrings.StringAdder(testInputA, testInputB);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [TestMethod]
+        [TestCategory("AddingNumbersAsStrings")]
+        public void StringAdderTest5()
+        {
+            string testInputA =     "11547890578905329880521782596491481461468164334854313481335141354813548134831483148134813548153481485853814809";
+            string testInputB =                      "503000000000000000040000000000000000020000000000000000435288135000000000000000000000000000001";
+            string expectedOutput = "11547890578905330383521782596491481501468164334854313501335141354813548570119618148134813548153481485853814810";
+
+            string actualOutput = OtherChallenges.AddingNumbersAsStrings.StringAdder(testInputA, testInputB);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [TestMethod]
+        [TestCategory("AddingNumbersAsStrings")]
+        public void StringAdderTest6()
+        {
+            string testInputA = "52";
+            string testInputB = "309427";
+            string expectedOutput = "309479";
+
+            string actualOutput = OtherChallenges.AddingNumbersAsStrings.StringAdder(testInputA, testInputB);
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        #endregion
     }
 }
