@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E0587AA7-3809-4F68-AFEC-CDF2076F01F3}</ProjectGuid>
+    <ProjectGuid>{51375E00-7CCA-465C-A69C-B4532146F6E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OtherChallenges</RootNamespace>
-    <AssemblyName>OtherChallenges</AssemblyName>
+    <RootNamespace>ProjectEuler</RootNamespace>
+    <AssemblyName>ProjectEuler</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,12 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaesarCipher.cs" />
-    <Compile Include="CutTheSticks.cs" />
-    <Compile Include="FibModified.cs" />
-    <Compile Include="LibraryFine.cs" />
-    <Compile Include="ServiceLane.cs" />
-    <Compile Include="SherlockSquares.cs" />
+    <Compile Include="Challenge001MultiplesOfThreeAndFive.cs" />
+    <Compile Include="Challenge130CompositesWithPrimeRepunitProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OtherChallenges
+namespace ProjectEuler
 {
-    public class ProjectEuler130
+    public class Challenge130CompositesWithPrimeRepunitProperty
     {
         //static void Main(String[] args)
         //{
@@ -120,6 +120,17 @@ namespace OtherChallenges
         //        }
         //    }
         //    return candidate != 1;
+        //}
+
+        //static bool IsPrime(long n)
+        //{
+        //    if (n <= 3) return n > 1;
+        //    if (n % 2 == 0 || n % 3 == 0) return false;
+        //    for (int i = 5; i * i <= n; i += 6)
+        //    {
+        //        if (n % i == 0 || n % (i + 2) == 0) return false;
+        //    }
+        //    return true;
         //}
 
         static bool IsPrime(int n)
