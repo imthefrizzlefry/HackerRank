@@ -663,7 +663,116 @@ namespace ThirtyDayTests
             }
             
         }
+
+        #endregion
+
+        #region
         
+        [TestMethod]
+        [TestCategory("Day16ExceptionsStringToIntegerTests")]
+        public void ExceptionsStringToIntegerTest1()
+        {
+            using (var sw = new StringWriter())
+            {
+                string testInput = "3";
+
+                string expectedResult = "3";
+
+                using (var sr = new StringReader(testInput))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+
+                    // Act
+                    Day16ExceptionsStringToInteger.CatchParsingException();
+
+                    // Assert
+                    string actualResult = sw.ToString();
+
+                    Assert.AreEqual(expectedResult, actualResult);
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("Day16ExceptionsStringToIntegerTests")]
+        public void ExceptionsStringToIntegerTest2()
+        {
+            using (var sw = new StringWriter())
+            {
+                string testInput = "za";
+
+                string expectedResult = "Bad String";
+
+                using (var sr = new StringReader(testInput))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+
+                    // Act
+                    Day16ExceptionsStringToInteger.CatchParsingException();
+
+                    // Assert
+                    string actualResult = sw.ToString();
+
+                    Assert.AreEqual(expectedResult, actualResult);
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("Day16ExceptionsStringToIntegerTests")]
+        public void ExceptionsStringToIntegerTest3()
+        {
+            using (var sw = new StringWriter())
+            {
+                string testInput = "3134";
+
+                string expectedResult = "3134";
+
+                using (var sr = new StringReader(testInput))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+
+                    // Act
+                    Day16ExceptionsStringToInteger.CatchParsingException();
+
+                    // Assert
+                    string actualResult = sw.ToString();
+
+                    Assert.AreEqual(expectedResult, actualResult);
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("Day16ExceptionsStringToIntegerTests")]
+        public void ExceptionsStringToIntegerTest4()
+        {
+            using (var sw = new StringWriter())
+            {
+                string testInput = "abc";
+
+                string expectedResult = "Bad String";
+
+                using (var sr = new StringReader(testInput))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+
+                    // Act
+                    Day16ExceptionsStringToInteger.CatchParsingException();
+
+                    // Assert
+                    string actualResult = sw.ToString();
+
+                    Assert.AreEqual(expectedResult, actualResult);
+                }
+            }
+        }
+
+
         #endregion
     }
 }
