@@ -551,7 +551,7 @@ namespace ThirtyDayTests
         #region 13 AbstractClasses
 
         [TestMethod]
-        [TestCategory("AbstractClassesTests")]
+        [TestCategory("Day13AbstractClassesTests")]
         public void AbstractClassTest1()
         {
 
@@ -583,6 +583,55 @@ namespace ThirtyDayTests
         #endregion
 
         #region 14 Scope
+
+        [TestMethod]
+        [TestCategory("Day14Scope")]
+        public void ScopeTest1()
+        {
+            int[] a = new int[] { 1, 2, 5 };
+            int expectedOutput = 4;
+
+            Difference d = new Difference(a);
+
+            d.computeDifference();
+
+            int actualOutput = d.maximumDifference;
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [TestMethod]
+        [TestCategory("Day14Scope")]
+        public void ScopeTest2()
+        {
+            int[] a = new int[] { 8, 19, 3, 2, 7 };
+            int expectedOutput = 17;
+
+            Difference d = new Difference(a);
+
+            d.computeDifference();
+
+            int actualOutput = d.maximumDifference;
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        [TestMethod]
+        [TestCategory("Day14Scope")]
+        public void ScopeTest3()
+        {
+            int[] a = new int[] { 8, 8, 8, 8, 8 };
+            int expectedOutput = 0;
+
+            Difference d = new Difference(a);
+
+            d.computeDifference();
+
+            int actualOutput = d.maximumDifference;
+
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
         #endregion
     }
 }
