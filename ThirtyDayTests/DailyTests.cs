@@ -633,5 +633,37 @@ namespace ThirtyDayTests
         }
 
         #endregion
+
+        #region 15 LinkedLists
+        
+        [TestMethod]
+        [TestCategory("Day15LinkedListsTests")]
+        public void LinkedListsTest1()
+        {
+            Node head = null;
+            int[] testInput = new int[] { 2, 3, 4, 1 };
+
+            string expectedResult = "2 3 4 1 ";
+
+            foreach(int data in testInput)
+            {
+                head = Day15LinkedList.insert(head, data);
+            }
+
+            using (var sw = new StringWriter())
+            {
+                Console.SetOut(sw);
+
+                Day15LinkedList.display(head);
+
+                string actualResult = sw.ToString();
+
+                Assert.AreEqual(expectedResult, actualResult);
+
+            }
+            
+        }
+        
+        #endregion
     }
 }
