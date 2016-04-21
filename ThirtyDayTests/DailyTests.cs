@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ThirtyDayClasses;
 using System.Collections.Generic;
+using System.IO;
 
 namespace ThirtyDayTests
 {
@@ -549,7 +550,39 @@ namespace ThirtyDayTests
 
         #region 13 AbstractClasses
 
+        [TestMethod]
+        [TestCategory("AbstractClassesTests")]
+        public void AbstractClassTest1()
+        {
 
+            String title = "The Alchemist";
+            String author = "Paulo Coelho";
+            int price = 248;
+
+            string expectedTitle = "Title: " + title;
+            string expectedAuthor = "Author: " + author;
+            string expectedPrice = "Price: " + price.ToString();
+
+            Book new_novel = new MyBook(title, author, price);
+
+            using (var sw = new StringWriter())
+            {
+                Console.SetOut(sw);
+                new_novel.display();
+
+                string[] actualResult = sw.ToString().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                Assert.AreEqual(expectedTitle, actualResult[0]);
+                Assert.AreEqual(expectedAuthor, actualResult[1]);
+                Assert.AreEqual(expectedPrice, actualResult[2]);
+
+            }
+            
+        }
+
+        #endregion
+
+        #region 14 Scope
         #endregion
     }
 }

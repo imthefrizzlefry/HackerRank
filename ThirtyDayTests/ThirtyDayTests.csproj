@@ -54,17 +54,12 @@
   <ItemGroup>
     <Compile Include="DailyTests.cs" />
     <Compile Include="OtherTests.cs" />
-    <Compile Include="ProjectEulerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OtherChallenges\OtherChallenges.csproj">
       <Project>{e0587aa7-3809-4f68-afec-cdf2076f01f3}</Project>
       <Name>OtherChallenges</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProjectEuler\ProjectEuler.csproj">
-      <Project>{51375e00-7cca-465c-a69c-b4532146f6e0}</Project>
-      <Name>ProjectEuler</Name>
     </ProjectReference>
     <ProjectReference Include="..\ThirtyDayClasses\ThirtyDayClasses.csproj">
       <Project>{cd65701d-7e84-4bc5-9f08-74453be57ce1}</Project>
