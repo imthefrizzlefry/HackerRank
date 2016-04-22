@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ThirtyDayClasses;
 using System.Collections.Generic;
+using System.Linq;
 using System.IO;
+using ThirtyDayClasses;
 
 namespace ThirtyDayTests
 {
@@ -33,7 +34,7 @@ namespace ThirtyDayTests
 
             Assert.AreEqual(expectedOutput, actualOutput);
         }
-        
+
         #endregion
 
         #region 01 Data Types
@@ -198,7 +199,7 @@ namespace ThirtyDayTests
             List<String> actualOutput = ThirtyDayClasses.Day08DictionariesAndMaps.Dictionary(testInput);
 
             Assert.AreEqual(expectedOutput[0], actualOutput[0], "edward Is Wrong");
-            
+
         }
 
         [TestMethod]
@@ -217,7 +218,7 @@ namespace ThirtyDayTests
                          "Not found" };
 
             List<String> actualOutput = ThirtyDayClasses.Day08DictionariesAndMaps.Dictionary(testInput);
-            
+
             Assert.AreEqual(expectedOutput[0], actualOutput[0], "Edward is wrong");
 
         }
@@ -257,7 +258,7 @@ namespace ThirtyDayTests
 
             for (int result = 0; result < 9; result++)
             {
-                Assert.AreEqual(expectedOutput[result], actualOutput[result], string.Format("{0} Is Wrong",testInput[result+5]));
+                Assert.AreEqual(expectedOutput[result], actualOutput[result], string.Format("{0} Is Wrong", testInput[result + 5]));
             }
 
         }
@@ -577,7 +578,7 @@ namespace ThirtyDayTests
                 Assert.AreEqual(expectedPrice, actualResult[2]);
 
             }
-            
+
         }
 
         #endregion
@@ -635,7 +636,7 @@ namespace ThirtyDayTests
         #endregion
 
         #region 15 LinkedLists
-        
+
         [TestMethod]
         [TestCategory("Day15LinkedListsTests")]
         public void LinkedListsTest1()
@@ -645,7 +646,7 @@ namespace ThirtyDayTests
 
             string expectedResult = "2 3 4 1 ";
 
-            foreach(int data in testInput)
+            foreach (int data in testInput)
             {
                 head = Day15LinkedList.insert(head, data);
             }
@@ -661,13 +662,13 @@ namespace ThirtyDayTests
                 Assert.AreEqual(expectedResult, actualResult);
 
             }
-            
+
         }
 
         #endregion
 
-        #region
-        
+        #region 16 ExceptionsStringToInteger
+
         [TestMethod]
         [TestCategory("Day16ExceptionsStringToIntegerTests")]
         public void ExceptionsStringToIntegerTest1()
@@ -772,6 +773,102 @@ namespace ThirtyDayTests
             }
         }
 
+
+        #endregion
+
+        #region 17 MoreExceptions
+
+        [TestMethod]
+        [TestCategory("Day17MoreExceptions")]
+
+        public void MoreExceptionsTest1()
+        {
+            string[] testInput = new string[]
+                {
+                    "3 5",
+                    "2 4",
+                    "-1 -2",
+                    "-1 3"
+                };
+
+            string[] expectedResult = new string[]
+                {
+                    "243",
+                    "16",
+                    "n and p should be non-negative",
+                    "n and p should be non-negative"
+                };
+
+            Calculator myCalculator = new Calculator();
+
+            for (int x = 0; x < testInput.Length; x++)
+            {
+                string[] num = testInput[x].Split();
+                int n = int.Parse(num[0]);
+                int p = int.Parse(num[1]);
+
+                using (var sw = new StringWriter())
+                {
+                    Console.SetOut(sw);
+                    try
+                    {
+                        int ans = myCalculator.power(n, p);
+                        Console.WriteLine(ans);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+
+                    string actualResult = sw.ToString().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
+                    Assert.AreEqual(expectedResult[x], actualResult);
+                }
+            }
+        }
+
+        #endregion
+
+        #region 18 QueuesAndStacks
+
+        private static void PalindromeTestHelper(string testInput, string expectedResult)
+        {
+            using (var sw = new StringWriter())
+            {
+                using (var sr = new StringReader(testInput))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+
+                    Day18QueuesAndStacks.RunPalindromeProgram();
+
+                    string actualResult = sw.ToString().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
+
+                    Assert.AreEqual(expectedResult, actualResult);
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("Day18QueuesAndStacksTests")]
+        public void QueuesAndStacksTest1()
+        {
+            string testInput = "racecar";
+            string expectedResult = string.Format("The word, {0}, is a palindrome.", testInput);
+            PalindromeTestHelper(testInput, expectedResult);
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("Day18QueuesAndStacksTests")]
+        public void QueuesAndStacksTest2()
+        {
+            string testInput = "yes";
+            string expectedResult = string.Format("The word, {0}, is not a palindrome.", testInput);
+
+            PalindromeTestHelper(testInput, expectedResult);
+        }
 
         #endregion
     }

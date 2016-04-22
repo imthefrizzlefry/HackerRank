@@ -57,6 +57,8 @@
     <Compile Include="Day14Scope.cs" />
     <Compile Include="Day15LinkedList.cs" />
     <Compile Include="Day16ExceptionsStringToInteger.cs" />
+    <Compile Include="Day17MoreExceptions.cs" />
+    <Compile Include="Day18QueuesAndStacks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
