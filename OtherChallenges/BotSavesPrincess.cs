@@ -15,7 +15,7 @@ namespace OtherChallenges
                 Console.WriteLine(direction);
             }
         }
-
+        
         static void displayPathtoPrincess(int n, String[] grid)
         {
             int[] positionOfPrincess = new int[2];
@@ -71,6 +71,40 @@ namespace OtherChallenges
             }
 
             displayPathtoPrincess(m, grid);
+        }
+
+        public static void nextMove(int n, int r, int c, string[] grid)
+        {
+            int[] positionOfPrincess = new int[2];
+
+            for (int x = 0; x < n; x++)
+            {
+                for (int y = 0; y < n; y++)
+                {
+                    if (grid[y][x] == 'p')
+                    {
+                        positionOfPrincess[0] = x;
+                        positionOfPrincess[1] = y;
+                    }
+                }
+            }
+
+            if (positionOfPrincess[1] > r)
+            {
+                Console.Write("DOWN");
+            }
+            else if (positionOfPrincess[1] < r)
+            {
+                Console.Write("UP");
+            }
+            else if (positionOfPrincess[0] > c)
+            {
+                Console.Write("RIGHT");
+            }
+            else if (positionOfPrincess[0] < c)
+            {
+                Console.Write("LEFT");
+            }
         }
     }
 }

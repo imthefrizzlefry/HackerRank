@@ -704,6 +704,126 @@ namespace ThirtyDayTests
             RunBotSavesPrincessTestHelper(testInput, expectedResult);
         }
 
+        private static void RunNextMoveOfBotSavesPrincessTestHelper(string testInput, string[] expectedResults)
+        {
+            int expectedIndex = 0;
+            using (var sr = new StringReader(testInput))
+            {
+                Console.SetIn(sr);
+                int n = int.Parse(Console.ReadLine());
+
+                string[] botPosition = Console.ReadLine().Split(' ');
+
+                int r = int.Parse(botPosition[0]);
+                int c = int.Parse(botPosition[1]);
+
+                String[] grid = new String[n];
+                for (int i = 0; i < n; i++)
+                {
+                    grid[i] = Console.ReadLine();
+                }
+                while (grid[r][c] != 'p')
+                {
+                    using (var sw = new StringWriter())
+                    {
+                        Console.SetOut(sw);
+                        BotSavesPrincess.nextMove(n, r, c, grid);
+                        string direction = sw.ToString();
+
+                        Assert.AreEqual(expectedResults[expectedIndex], direction);
+
+                        expectedIndex++;
+
+                        switch (direction)
+                        {
+                            case "UP":
+                            {
+                                r--;
+                                break;
+                            }
+                            case "DOWN":
+                            {
+                                r++;
+                                break;
+                            }
+                            case "LEFT":
+                            {
+                                c--;
+                                break;
+                            }
+                            case "RIGHT":
+                            {
+                                c++;
+                                break;
+                            }
+                        }
+
+                        
+                    }
+                        
+                }
+            }
+
+        }
+
+        [TestMethod]
+        [TestCategory("BotSavesPrincessTests")]
+        public void NextMove_BotSavesPrincessTest1()
+        {
+            string testInput = "3\n"
+                + "1 1\n"
+                + "---\n"
+                + "-m-\n"
+                + "p--";
+
+            string[] expectedResult = new string[]
+            {
+                "DOWN",
+                "LEFT"
+            };
+            RunNextMoveOfBotSavesPrincessTestHelper(testInput, expectedResult);
+
+        }
+
+        [TestMethod]
+        [TestCategory("BotSavesPrincessTests")]
+        public void NextMove_BotSavesPrincessTest2()
+        {
+            string testInput = "12\n"
+                + "2 3\n"
+                + "------------\n"
+                + "------------\n"
+                + "---m--------\n"
+                + "------------\n"
+                + "------------\n"
+                + "------------\n"
+                + "------------\n"
+                + "------------\n"
+                + "------------\n"
+                + "------------\n"
+                + "---------p--\n"
+                + "------------";
+
+            string[] expectedResult = new string[]
+            {
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "RIGHT",
+                "RIGHT",
+                "RIGHT",
+                "RIGHT",
+                "RIGHT",
+                "RIGHT"
+            };
+            RunNextMoveOfBotSavesPrincessTestHelper(testInput, expectedResult);
+        }
+
         #endregion
     }
 }
