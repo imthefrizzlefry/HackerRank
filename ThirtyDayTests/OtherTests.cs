@@ -3,6 +3,8 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OtherChallenges;
+using System.IO;
+using System.Linq;
 
 namespace ThirtyDayTests
 {
@@ -616,6 +618,90 @@ namespace ThirtyDayTests
             string actualOutput = OtherChallenges.AddingNumbersAsStrings.StringAdder(testInputA, testInputB);
 
             Assert.AreEqual(expectedOutput, actualOutput);
+        }
+
+        #endregion
+
+        #region Bot Saves Princess Tests
+
+        private static void RunBotSavesPrincessTestHelper(string testInput, string[] expectedResult)
+        {
+            using (var sw = new StringWriter())
+            {
+                using (var sr = new StringReader(testInput))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+
+                    BotSavesPrincess.SaveThePrincess();
+
+                    string[] actualResult = sw.ToString().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                    Assert.AreEqual(expectedResult.Length, actualResult.Length);
+
+                    for (int x = 0; x < expectedResult.Length; x++)
+                    {
+                        Assert.AreEqual(expectedResult[x], actualResult[x]);
+                    }
+                }
+            }
+        }
+
+
+        [TestMethod]
+        [TestCategory("BotSavesPrincessTests")]
+        public void BotSavesPrincessTest1()
+        {
+            string testInput = "3\n"
+                + "---\n"
+                + "-m-\n"
+                + "p--";
+
+            string[] expectedResult = new string[]
+            {
+                "DOWN",
+                "LEFT"
+            };
+            RunBotSavesPrincessTestHelper(testInput, expectedResult);
+        }
+
+
+        [TestMethod]
+        [TestCategory("BotSavesPrincessTests")]
+        public void BotSavesPrincessTest2()
+        {
+            string testInput = "12\n"
+                + "------------\n"
+                + "------------\n"
+                + "---m--------\n"
+                + "------------\n"
+                + "------------\n"
+                + "------------\n"
+                + "------------\n"
+                + "------------\n"
+                + "------------\n"
+                + "------------\n"
+                + "---------p--\n"
+                + "------------";
+
+            string[] expectedResult = new string[]
+            {
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "DOWN",
+                "RIGHT",
+                "RIGHT",
+                "RIGHT",
+                "RIGHT",
+                "RIGHT",
+                "RIGHT"
+            };
+            RunBotSavesPrincessTestHelper(testInput, expectedResult);
         }
 
         #endregion
